@@ -56,9 +56,6 @@ def alphabet_set(countries):
                 alphabet.remove(char)
                 if country not in countries_abc:
                     countries_abc.append(country)
-        else:
-            pass
-    print(countries_abc)
     return countries_abc
 
 
