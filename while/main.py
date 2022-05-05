@@ -18,8 +18,6 @@ def unique_koala_facts(number):
         if fact not in unique_koala_facts_list:
             if len(unique_koala_facts_list) != number:
                 unique_koala_facts_list.append(fact)
-            else:
-                break
     return unique_koala_facts_list
 
 
