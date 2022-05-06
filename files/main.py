@@ -40,8 +40,8 @@ def find_password(cached_files):
         with open(file) as f:
             for line in f:
                 if "password" in line:
-                    split_line = line.split()
-                    return split_line[1]
+                    password_list = line.split()
+                    return password_list[1]
 
 
 file_list = cached_files()
