@@ -24,14 +24,12 @@ def cache_zip(zip_file, cache_dir):
 
 
 def cached_files():
-    file_list = []
     file_list_absolute = []
     for root, _, files in os.walk('./files/cache'):
         for name in files:
-            file_list.append(os.path.join(root, name))
-    lenght = len(file_list)
-    for i in range(lenght):
-        file_list_absolute.append(os.path.abspath(file_list[i]))
+            file = os.path.join(root, name)
+            file_absolute = os.path.abspath(file)
+            file_list_absolute.append(file_absolute)
     return file_list_absolute
 
 
