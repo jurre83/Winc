@@ -113,3 +113,16 @@ student_ages = {
 
 print(student_ages['bob'])
 print(student_ages['eli'])
+
+# SETS
+
+# list zonder duplicates
+
+numbers = [1, 1, 2, 3, 4]
+uniques = set(numbers)
+print(uniques)  # {1, 2, 3, 4}
+second = {1, 4}
+second.add(5)
+print(second)
+second.add(2)
+print(second)
