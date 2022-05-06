@@ -20,18 +20,18 @@ os.makedirs('test2/test/test')
 
 print(os.listdir())
 
-# remove dir
-os.rmdir('test')
-# remove all all dirs in the path
-os.removedirs('test2/test/test')
+# # remove dir
+# os.rmdir('test')
+# # remove all all dirs in the path
+# os.removedirs('test2/test/test')
 
 
 # see files and folders () is cwd of (path)
 print(os.listdir())
 
 # rename file or folder
-os.rename('test.txt', 'demo.txt')
-print(os.listdir())
+# os.rename('test.txt', 'demo.txt')
+# print(os.listdir())
 
 # info of file
 print(os.stat('demo.txt'))
