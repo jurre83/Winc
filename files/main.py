@@ -4,28 +4,24 @@ __human_name__ = "files"
 
 import os
 import shutil
+DIR = './cache'
 
 
 def clean_cache():
-    if os.path.isdir('./files/cache'):
-        shutil.rmtree('./files/cache')
-        os.mkdir('./files/cache')
+    if os.path.isdir(DIR):
+        shutil.rmtree(DIR)
+        os.mkdir(DIR)
     else:
-        os.mkdir('./files/cache')
+        os.mkdir(DIR)
 
 
 def cache_zip(zip_file, cache_dir):
-    if os.path.isdir('./files/cache'):
-        shutil.rmtree('./files/cache')
-        os.mkdir('./files/cache')
-    else:
-        os.mkdir('./files/cache')
     shutil.unpack_archive(zip_file, cache_dir)
 
 
 def cached_files():
     file_list_absolute = []
-    for root, _, files in os.walk('./files/cache'):
+    for root, _, files in os.walk(DIR):
         for name in files:
             file = os.path.join(root, name)
             file_absolute = os.path.abspath(file)
@@ -42,5 +38,11 @@ def find_password(cached_files):
                     return password_list[1]
 
 
-file_list = cached_files()
-find_password(file_list)
+def main():
+    clean_cache()
+    file_list = cached_files()
+    find_password(file_list)
+
+
+if __name__ == "__main__":
+    main()

@@ -5,12 +5,11 @@ __human_name__ = "arguments"
 # Add your code after this line
 
 
-def greet(name, msg="Hello, <name>!"):
-    greet = msg.replace("<name>", name)
-    return greet
+def greet(name: str, msg: str = "Hello, <name>!") -> str:
+    return msg.replace("<name>", name)
 
 
-def force(mass, body="earth"):
+def force(mass: float, body: str = "earth") -> float:
     gravity = {
         "sun": 274,
         "jupiter": 24.9,
@@ -24,11 +23,19 @@ def force(mass, body="earth"):
         "moon": 1.6,
         "pluto": 0.6,
     }
-    force = mass * gravity[body]
-    return round(force, 2)
+    return round(mass * gravity[body], 2)
 
 
-def pull(m1, m2, d):
+def pull(m1: float, m2: float, d: float) -> float:
     g = 6.674 * 10 ** -11
-    pull = g * m1 * m2 / d ** 2
-    return pull
+    return g * m1 * m2 / d ** 2
+
+
+def main():
+    greet('Jurre')
+    force(0.1, 'saturn')
+    pull(800, 900, 5)
+
+
+if __name__ == "__main__":
+    main()
